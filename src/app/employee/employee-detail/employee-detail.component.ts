@@ -3,12 +3,17 @@ import {
     FormControl,
     FormGroup,
     FormBuilder,
+    Validators
 } from '@angular/forms';
 import { Employee } from '../employee';
+import { ValidatePhone } from '@app/validators/phoneno.validator';
+import { ValidateEmail } from '@app/validators/email.validator';
+
 @Component({
     selector: 'app-employee-detail',
     templateUrl: './employee-detail.component.html',
 })
+
 export class EmployeeDetailComponent implements OnInit {
     @Input() selectedEmployee: Employee = {
         id: 0,
@@ -29,11 +34,11 @@ export class EmployeeDetailComponent implements OnInit {
     phoneno: FormControl;
     email: FormControl;
     constructor(private builder: FormBuilder) {
-        this.title = new FormControl('');
+        this.title = new FormControl('', Validators.compose([Validators.required]));
         this.firstname = new FormControl('');
         this.lastname = new FormControl('');
-        this.phoneno = new FormControl('');
-        this.email = new FormControl('');
+        this.phoneno = new FormControl('', Validators.compose([Validators.required, ValidatePhone]));
+        this.email = new FormControl('', Validators.compose([Validators.required, ValidateEmail]));
         this.employeeForm = new FormGroup({
             title: this.title,
             firstname: this.firstname,

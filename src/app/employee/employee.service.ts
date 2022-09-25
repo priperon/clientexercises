@@ -11,7 +11,7 @@ export class EmployeeService {
     resourceURL: string;
     status: string;
     constructor(public http: HttpClient) {
-        this.resourceURL = `${BASEURL}api/employees`;
+        this.resourceURL = `${BASEURL}employees`;
         this.status = '';
     } // constructor
     /**
@@ -42,6 +42,14 @@ export class EmployeeService {
             .post<Employee>(this.resourceURL, employee)
             .pipe(retry(1), catchError(this.handleError));
     } // add
+    /**
+* delete an employee on the server, return Observable
+*/
+    delete(id: number): Observable<number> {
+        return this.http
+            .delete<number>(`${this.resourceURL}/${id}`)
+            .pipe(retry(1), catchError(this.handleError));
+    } // delete
     // Error handling
     handleError(error: any) {
         let errorMessage = '';

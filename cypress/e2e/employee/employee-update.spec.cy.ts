@@ -1,22 +1,22 @@
-describe("employee update test", () => {
-    it("visits the root", () => {
-        cy.visit("/");
+describe('employee update test', () => {
+    it('visits the root', () => {
+        cy.visit('/');
     });
-    it("clicks the menu button employees option", () => {
+    it('clicks the menu button employees option', () => {
         cy.get('mat-icon').click();
         cy.contains('a', 'employees').click();
     });
-    it("selects Peron", () => {
-        cy.contains('Peron').click()
+    it('selects Test, Employee', () => {
+        cy.contains('John, Doe').click();
     });
-    it("updates Peron email", () => {
+    it('updates email', () => {
         cy.get("[type='email']").clear();
-        cy.get("[type='email']").type('pper@domain.com');
+        cy.get("[type='email']").type('jd@here.ca');
     });
-    it("submits the update", () => {
-        cy.get('form').submit();
+    it('clicks the save button', () => {
+        cy.get('button').contains('Save').click();
     });
-    it("confirms update", () => {
+    it('confirms update', () => {
         cy.contains('updated!');
-    })
+    });
 });
