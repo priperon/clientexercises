@@ -8,21 +8,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatComponentsModule } from './mat-components/mat-components.module';
 import { HomeComponent } from './home/home.component';
 import { EmployeeModule } from './employee/employee.module';
+import { ExpenseModule } from './expense/expense.module';
 @NgModule({
-declarations: [
-AppComponent,
-HomeComponent
-],
-imports: [
-BrowserModule,
-AppRoutingModule,
-BrowserAnimationsModule,
-HttpClientModule,
-MatComponentsModule,
-EmployeeModule,
-],
-providers: [],
-bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HomeComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MatComponentsModule,
+        EmployeeModule,
+        ExpenseModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
 // import { NgModule } from '@angular/core';
