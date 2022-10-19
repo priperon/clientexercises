@@ -9,6 +9,8 @@ import { MatComponentsModule } from './mat-components/mat-components.module';
 import { HomeComponent } from './home/home.component';
 import { EmployeeModule } from './employee/employee.module';
 import { ExpenseModule } from './expense/expense.module';
+import { ReportModule } from './report/report.module';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -21,7 +23,8 @@ import { ExpenseModule } from './expense/expense.module';
         HttpClientModule,
         MatComponentsModule,
         EmployeeModule,
-        ExpenseModule
+        ExpenseModule,
+        ReportModule
     ],
     providers: [],
     bootstrap: [AppComponent]
