@@ -10,11 +10,13 @@ import { HomeComponent } from './home/home.component';
 import { EmployeeModule } from './employee/employee.module';
 import { ExpenseModule } from './expense/expense.module';
 import { ReportModule } from './report/report.module';
+import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        HomeComponent
+        HomeComponent,
+        DeleteDialogComponent
     ],
     imports: [
         BrowserModule,
